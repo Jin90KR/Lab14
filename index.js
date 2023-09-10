@@ -166,6 +166,7 @@ var changeBtn = document.getElementById("change_quotes");
 var newQuote = document.getElementById("add_quotes");
 
 
+
 function changequote(arr) {
     console.log(arr);
     var randomQuote = Math.floor(Math.random() * arr.length);
@@ -179,21 +180,27 @@ function changequote(arr) {
     };   
 };
 
-function autoQuote() {
-    randomQuote = Math.floor(Math.random() * quotes.length);
-    newQuote.innerHTML = quotes[randomQuote].quote + "<br><br>" + quotes[randomQuote].source;
-    if (quotes[randomQuote].citation !== undefined) {
-        newQuote.innerHTML = quotes[randomQuote].quote + "<br><br>" + quotes[randomQuote].source + "<br><br>" + quotes[randomQuote].citation;
-    };
+// function autoQuote() {
+//     randomQuote = Math.floor(Math.random() * quotes.length);
+//     newQuote.innerHTML = quotes[randomQuote].quote + "<br><br>" + quotes[randomQuote].source;
+//     if (quotes[randomQuote].citation !== undefined) {
+//         newQuote.innerHTML = quotes[randomQuote].quote + "<br><br>" + quotes[randomQuote].source + "<br><br>" + quotes[randomQuote].citation;
+//     };
             
-    if (quotes[randomQuote].year !== undefined) {
-        newQuote.innerHTML = quotes[randomQuote].quote + "<br><br>" + quotes[randomQuote].source + "<br><br>" + quotes[randomQuote].citation + "<br><br>" + quotes[randomQuote].year;
-    };   
-}
+//     if (quotes[randomQuote].year !== undefined) {
+//         newQuote.innerHTML = quotes[randomQuote].quote + "<br><br>" + quotes[randomQuote].source + "<br><br>" + quotes[randomQuote].citation + "<br><br>" + quotes[randomQuote].year;
+//     };
+// }
+
 
 
 function changebackground() {
-    document.body.style.backgroundColor = "";
+    var r = Math.floor(Math.random() * 256);
+    var g = Math.floor(Math.random() * 256);
+    var b = Math.floor(Math.random() * 256);
+    document.body.style.backgroundColor = "rgb(" + String(r) + ", " + String(g) + ", " + String(b) + ")"
+    console.log("rgb(" + String(r) +", " + String(g) +", " + String(b) + ")");
+    console.log(typeof r)
 }
 
 changeBtn.addEventListener("click", ()=> {
@@ -201,4 +208,4 @@ changeBtn.addEventListener("click", ()=> {
     changebackground();
 })
 
-setInterval(autoQuote, 5000);
+// setInterval(function(){changequote(quotes)}, 5000);
