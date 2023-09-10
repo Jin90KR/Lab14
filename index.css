@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.bodycontainer{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    
+}
+
+.container{
+    position: relative;
+    left: 100px;
+    top: 100px;
+}
+.addquotes{
+    font-size: 1.5rem;
+    padding-bottom: 100px;
+}
+
+.change{
+    position: fixed;
+    top: 400px;
+    font-size: 1rem;;
+}
+
